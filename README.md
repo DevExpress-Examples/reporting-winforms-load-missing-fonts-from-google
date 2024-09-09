@@ -4,27 +4,19 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-# Product/Platform - Task
+# Reporting for WinForms - Add missing fonts into DXFontRepository
 
-The project demostrates how to add missing font into DXFontRepository
+Description
 
 ## Files to Review
 
-- FontCollectorService.cs
-- link.js
-- ...
+- [FontCollectorService.cs](./CS/FontCollectorService.cs)
+- [Program.cs](./CS/Program.cs)
 
 ## Documentation
 
-- link
-- link
-- ...
+- [DXFontRepository.QueryNotFoundFont](https://docs.devexpress.com/CoreLibraries/DevExpress.Drawing.DXFontRepository.QueryNotFoundFont?v=24.2)
 
-## More Examples
-
-- link
-- link
-- ...
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 
