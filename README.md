@@ -17,8 +17,8 @@ You can add fonts from anywhere. The `FontCollectorService.cs` is an example of 
 
 ## Files to Review
 
-- [FontCollectorService.cs](./CS/FontCollectorService.cs)
-- [Form1.cs](./CS/Form1.cs)
+- [FontCollectorService.cs](./CS/LoadMissingFonts/FontCollectorService.cs)
+- [Form1.cs](./CS/LoadMissingFonts/Form1.cs)
 
 ## Documentation
 
