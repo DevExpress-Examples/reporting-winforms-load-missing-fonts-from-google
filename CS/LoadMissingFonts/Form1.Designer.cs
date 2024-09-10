@@ -30,16 +30,16 @@
             // 
             documentViewer1.Dock = DockStyle.Fill;
             documentViewer1.IsMetric = false;
-            documentViewer1.Location = new Point(0,0);
+            documentViewer1.Location = new Point(0, 0);
             documentViewer1.Name = "documentViewer1";
-            documentViewer1.Size = new Size(800,450);
+            documentViewer1.Size = new Size(800, 450);
             documentViewer1.TabIndex = 0;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F,15F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800,450);
+            ClientSize = new Size(800, 450);
             Controls.Add(documentViewer1);
             Name = "Form1";
             Text = "Form1";

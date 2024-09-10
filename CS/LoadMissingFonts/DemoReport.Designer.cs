@@ -275,6 +275,8 @@ namespace FontDemoReport {
             this.GroupHeader1});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
+            this.DataMember = "Products";
+            this.DataSource = this.sqlDataSource1;
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.Version = "24.2";
             xrWatermark1.Id = "Watermark1";
