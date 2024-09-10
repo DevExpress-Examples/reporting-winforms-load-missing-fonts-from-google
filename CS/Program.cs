@@ -8,7 +8,7 @@ namespace FontDemoReport {
         static void Main(string[] args) {
             using(var report = new DemoReport()) {
                 DXFontRepository.QueryNotFoundFont += Report_QueryNotFoundFont;
-                report.ShowDesignerDialog();
+                report.ShowPreviewDialog();
             }
         }
 
