@@ -68,6 +68,7 @@ namespace FontDemoReport {
             DevExpress.DataAccess.Sql.Join join1 = new DevExpress.DataAccess.Sql.Join();
             DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DemoReport));
+            DevExpress.XtraReports.UI.XRWatermark xrWatermark1 = new DevExpress.XtraReports.UI.XRWatermark();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.label5 = new DevExpress.XtraReports.UI.XRLabel();
@@ -108,11 +109,13 @@ namespace FontDemoReport {
             // 
             this.label3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ProductName]")});
+            this.label3.Font = new DevExpress.Drawing.DXFont("Roboto", 9.75F);
             this.label3.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 0F);
             this.label3.Multiline = true;
             this.label3.Name = "label3";
             this.label3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.label3.SizeF = new System.Drawing.SizeF(362.5F, 27.08333F);
+            this.label3.StylePriority.UseFont = false;
             this.label3.Text = "label3";
             // 
             // BottomMargin
@@ -157,7 +160,7 @@ namespace FontDemoReport {
             // 
             this.label2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([UnitPrice])")});
-            this.label2.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.label2.Font = new DevExpress.Drawing.DXFont("Pixelify Sans", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.label2.LocationFloat = new DevExpress.Utils.PointFloat(513.5417F, 0F);
             this.label2.Multiline = true;
             this.label2.Name = "label2";
@@ -286,6 +289,9 @@ namespace FontDemoReport {
             this.DataSource = this.sqlDataSource1;
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.Version = "24.2";
+            xrWatermark1.Id = "Watermark1";
+            this.Watermarks.AddRange(new DevExpress.XtraPrinting.Drawing.Watermark[] {
+            xrWatermark1});
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

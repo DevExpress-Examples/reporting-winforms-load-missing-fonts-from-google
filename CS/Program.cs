@@ -15,7 +15,7 @@ namespace FontDemoReport {
         private static void Report_QueryNotFoundFont(object sender, NotFoundFontEventArgs e) {
             var service = new FontCollectorService();
             var fontData = service.ProcessFont(e.RequestedFont).Result;
-            e.FontFileData = fontData;
+            e.FontFileData = fontData;            
         }
     }
 }
