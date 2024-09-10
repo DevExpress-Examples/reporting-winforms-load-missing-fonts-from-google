@@ -1,0 +1,21 @@
+using DevExpress.Drawing;
+using DevExpress.XtraReports.UI;
+using FontDemoReport;
+
+namespace LoadMissingFonts {
+    public partial class Form1 : Form {
+        public Form1() {        
+            using (var report = new DemoReport()) {
+                DXFontRepository.QueryNotFoundFont += Report_QueryNotFoundFont;
+                report.ShowPreviewDialog();
+            }
+            InitializeComponent();
+        }
+
+        private static void Report_QueryNotFoundFont(object sender,NotFoundFontEventArgs e) {
+            var service = new FontCollectorService();
+            var fontData = service.ProcessFont(e.RequestedFont).Result;
+            e.FontFileData = fontData;
+        }
+    }
+}

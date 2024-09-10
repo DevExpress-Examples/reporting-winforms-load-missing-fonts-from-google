@@ -138,7 +138,7 @@ namespace FontDemoReport {
             // 
             this.label4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Description]")});
-            this.label4.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
+            this.label4.Font = new DevExpress.Drawing.DXFont("Roboto", 10F);
             this.label4.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 39.58333F);
             this.label4.Multiline = true;
             this.label4.Name = "label4";
@@ -160,7 +160,7 @@ namespace FontDemoReport {
             // 
             this.label2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([UnitPrice])")});
-            this.label2.Font = new DevExpress.Drawing.DXFont("Pixelify Sans", 10F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.label2.Font = new DevExpress.Drawing.DXFont("Nerko One", 14F, DevExpress.Drawing.DXFontStyle.Bold);
             this.label2.LocationFloat = new DevExpress.Utils.PointFloat(513.5417F, 0F);
             this.label2.Multiline = true;
             this.label2.Name = "label2";
@@ -187,7 +187,7 @@ namespace FontDemoReport {
             // sqlDataSource1
             // 
             this.sqlDataSource1.ConnectionName = "nwind";
-            sqLiteConnectionParameters1.FileName = "C:\\Temp\\nwind.db";
+            sqLiteConnectionParameters1.FileName = "C:\\Users\\Public\\Documents\\DevExpress Demos 24.2\\Components\\Data\\nwind.db";
             this.sqlDataSource1.ConnectionParameters = sqLiteConnectionParameters1;
             this.sqlDataSource1.Name = "sqlDataSource1";
             columnExpression1.ColumnName = "CategoryID";
