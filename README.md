@@ -24,6 +24,7 @@ You can use the `e.RequestedFont` and `e.ActualFont` properties to identify font
 
 > [!Important]
 > You need a personal developer API key to use the code from the example. See [Developer API](https://developers.google.com/fonts/docs/developer_api). 
+>
 > Add the API key to `apiKey` variable in the [FontCollectorService.cs](./CS/LoadMissingFonts/FontCollectorService.cs#L19) file before you launch the example. 
 
 ## Files to Review
