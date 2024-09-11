@@ -22,6 +22,10 @@ The [DXFontRepository.QueryNotFoundFont](https://docs.devexpress.com/CoreLibrari
 
 You can use the `e.RequestedFont` and `e.ActualFont` properties to identify fonts in the application. To add a missing font to the `DXFontRepository` before document generation begins, prepare a byte array that contains font data and pass it to `e.FontFileData`. 
 
+> [!Important]
+> You need a personal developer API key to use the code from the example. See [Developer API](https://developers.google.com/fonts/docs/developer_api). 
+> Add the API key to `apiKey` variable in the [FontCollectorService.cs](./CS/LoadMissingFonts/FontCollectorService.cs#L19) file before you launch the example. 
+
 ## Files to Review
 
 - [FontCollectorService.cs](./CS/LoadMissingFonts/FontCollectorService.cs)
