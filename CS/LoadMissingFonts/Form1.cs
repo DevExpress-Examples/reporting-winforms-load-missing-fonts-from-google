@@ -11,7 +11,9 @@ namespace LoadMissingFonts {
         private void Form1_Load(object sender, EventArgs e) {
             using (var report = new DemoReport()) {
                 DXFontRepository.QueryNotFoundFont += Report_QueryNotFoundFont;
-                report.ShowPreviewDialog();
+                using (var tool = new ReportPrintTool(report)) {
+                    tool.ShowRibbonPreviewDialog();
+                }
             }
             Close();
         }
