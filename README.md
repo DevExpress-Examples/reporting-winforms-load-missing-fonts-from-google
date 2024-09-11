@@ -7,13 +7,20 @@
 
 You can detect and resolve fonts used in documents but are missing in your application’s hosting environment (such as various Docker images, Azure App Service, and so on). This helps you ensure that reports appear as designed, regardless of the hosting platform.
 
-The `DXFontRepository.QueryNotFoundFont` event raises for every missing font used in documents. With event args, you can identify and resolve such missing fonts by adding them into DXFontRepository.
+You can add fonts from anywhere. The `FontCollectorService.cs` is an example of a custom service that asynchronously adds missing fonts from [Google Fonts](https://fonts.google.com) into [DXFontRepository](https://docs.devexpress.com/CoreLibraries/404255/devexpress-drawing-library/use-font-repository-to-add-custom-fonts?v=24.2). 
 
-You can use the `e.RequestedFont` and `e.ActualFont` properties to identify fonts in the application. To add a missing font to the `DXFontRepository` before document generation begins, prepare a byte array that contains font data and pass it to `e.FontFileData`. 
+> [!Note]
+> Google Fonts are open-source, but be sure to read the associated license agreement to determine usage rights for your particular use case.
 
-You can add fonts from anywhere. The `FontCollectorService.cs` is an example of a custom service that asynchronously adds missing fonts from Google Fonts into `DXFontRepository`. The report contains the following Google fonts that are not common and can be missed in your hosting environment: _Ga Maamli_, _Roboto_, and _Nerko One_. The exported [result.pdf](result.pdf) file illustrates that missing fonts are successfully downloaded and available in the report:
+The report contains the following Google fonts that are not common and can be missed in your hosting environment: _Ga Maamli_, _Roboto_, and _Nerko One_. The exported [result.pdf](result.pdf) file illustrates that missing fonts are successfully downloaded and available in the report:
 
 ![report with fonts](report-with-fonts.png)
+
+## Example Details
+
+The [DXFontRepository.QueryNotFoundFont](https://docs.devexpress.com/CoreLibraries/DevExpress.Drawing.DXFontRepository.QueryNotFoundFont?v=24.2) event raises for every missing font used in documents. With event args, you can identify and resolve such missing fonts by adding them into DXFontRepository.
+
+You can use the `e.RequestedFont` and `e.ActualFont` properties to identify fonts in the application. To add a missing font to the `DXFontRepository` before document generation begins, prepare a byte array that contains font data and pass it to `e.FontFileData`. 
 
 ## Files to Review
 
@@ -23,6 +30,7 @@ You can add fonts from anywhere. The `FontCollectorService.cs` is an example of 
 ## Documentation
 
 - [DXFontRepository.QueryNotFoundFont](https://docs.devexpress.com/CoreLibraries/DevExpress.Drawing.DXFontRepository.QueryNotFoundFont?v=24.2)
+- [Use DXFontRepository to Add Custom Fonts](https://docs.devexpress.com/CoreLibraries/404255/devexpress-drawing-library/use-font-repository-to-add-custom-fonts?v=24.2)
 
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
