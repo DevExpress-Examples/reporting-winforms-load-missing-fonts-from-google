@@ -16,7 +16,7 @@ namespace LoadMissingFonts {
             public string? regular { get; set; }
         }
 
-        string apiKey = "AIzaSyCv4qcNraSIRkPTvHcQ2jsxKyfAOKZ_aBA";
+        string apiKey = "YOUR_API_KEY";
         string fontApiUrl = "https://www.googleapis.com/webfonts/v1/webfonts/?family=";
 
         async Task<byte[]?> LoadFontFromGoogle(string fontName) {
