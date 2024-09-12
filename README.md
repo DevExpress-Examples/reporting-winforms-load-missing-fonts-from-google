@@ -3,29 +3,38 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-# Reporting for WinForms - Add missing fonts into DXFontRepository from Google
+# Reporting for WinForms - Obtain missing fonts from a font hosting service (Google Fonts)
 
-You can detect and resolve fonts used in documents but are missing in your application’s hosting environment (such as various Docker images, Azure App Service, and so on). This helps you ensure that reports appear as designed, regardless of the hosting platform.
+Your report design and layout may rely on a font type that is not available in the application's hosting environment. The font may not be installed on the client machine, in a Docker image, in an Azure Virtual Desktop, or in another host/container. In such cases, your report substitutes unavailable fonts with default options. Report pages appear different from their original design.  
 
-You can add fonts from anywhere. The `FontCollectorService.cs` is an example of a custom service that asynchronously adds missing fonts from [Google Fonts](https://fonts.google.com) into [DXFontRepository](https://docs.devexpress.com/CoreLibraries/404255/devexpress-drawing-library/use-font-repository-to-add-custom-fonts?v=24.2). 
+DevExpress Reports suite helps you ensure that a report uses correct fonts regardless of the hosting environment. A report notifies you about missing typefaces so you can obtain required font data. Once you obtain the fonts, add them to your report's [DXFontRepository](https://docs.devexpress.com/CoreLibraries/404255/devexpress-drawing-library/use-font-repository-to-add-custom-fonts?v=24.2) and thus make them available to report controls. 
+
+You can obtain required font data from any font hosting service. This example illustrates a service that downloads missing fonts from [Google Fonts](https://fonts.google.com). 
 
 > [!Note]
-> Google Fonts are open-source, but be sure to read the associated license agreement to determine usage rights for your particular use case.
-
-The report contains the following Google fonts that are not common and can be missed in your hosting environment: _Ga Maamli_, _Roboto_, and _Nerko One_. The exported [result.pdf](result.pdf) file illustrates that missing fonts are successfully downloaded and available in the report:
-
-![report with fonts](report-with-fonts.png)
+> Review license agreements associated with fonts that you use. Use and redistribution permissions may vary. The service used in this example (Google Fonts) hosts fonts that are open source and without cost. Review [Google Fonts FAQ](https://developers.google.com/fonts/faq) to learn more. 
 
 ## Example Details
 
-The [DXFontRepository.QueryNotFoundFont](https://docs.devexpress.com/CoreLibraries/DevExpress.Drawing.DXFontRepository.QueryNotFoundFont?v=24.2) event raises for every missing font used in documents. With event args, you can identify and resolve such missing fonts by adding them into DXFontRepository.
+The report in this example contains a few fonts that may be missing in many hosting environments: _Ga Maamli_, _Roboto_, and _Nerko One_. The task is to obtain these fonts (if missing) and make them available to report controls. When exported to PDF, the report must reflects the original design ([result.pdf](result.pdf)):
 
-You can use the `e.RequestedFont` and `e.ActualFont` properties to identify fonts in the application. To add a missing font to the `DXFontRepository` before document generation begins, prepare a byte array that contains font data and pass it to `e.FontFileData`. 
+![Report PDF file uses typefaces obtained from Google Fonts](report-with-fonts.png)
+
+## Implementation
+
+The [DXFontRepository.QueryNotFoundFont](https://docs.devexpress.com/CoreLibraries/DevExpress.Drawing.DXFontRepository.QueryNotFoundFont?v=24.2) event fires for every unavailable font type. The event handler does the following: 
+
+- Identifies the missing typeface and its suggested alternative (`e.RequestedFont` and `e.ActualFont`) 
+- Obtains the required font file from Google Fonts
+- Prepares a byte array and passes it to `e.FontFileData`
+
+This implementation ensures that `DXFontRepository` contains all required font types before document generation begins.  
+
 
 > [!Important]
-> You need a personal developer API key to use the code from the example. See [Developer API](https://developers.google.com/fonts/docs/developer_api). 
+> Use your personal Google API Key to run this example. For instructions on how to obtain your key, see [Google Fonts Developer API](https://developers.google.com/fonts/docs/developer_api#identifying_your_application_to_google). 
 >
-> Add the API key to `apiKey` variable in the [FontCollectorService.cs](./CS/LoadMissingFonts/FontCollectorService.cs#L19) file before you launch the example. 
+> Assign your API Key to the `apiKey` variable in the [FontCollectorService.cs](./CS/LoadMissingFonts/FontCollectorService.cs#L19) file before you launch the example. 
 
 ## Files to Review
 
