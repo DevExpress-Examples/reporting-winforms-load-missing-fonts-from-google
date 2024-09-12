@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-# Reporting for WinForms - Obtain missing fonts from a font hosting service (Google Fonts)
+# Reporting for WinForms - Obtain Missing Fonts from a Font Hosting Service (Google Fonts)
 
 Your report design and layout may rely on a font type that is not available in the application's hosting environment. The font may not be installed on the client machine, in a Docker image, in an Azure Virtual Desktop, or in another host/container. In such cases, your report substitutes unavailable fonts with default options. Report pages appear different from their original design.  
 
