@@ -27,7 +27,6 @@ namespace FontDemoReport {
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
-            DevExpress.DataAccess.ConnectionParameters.SQLiteConnectionParameters sqLiteConnectionParameters1 = new DevExpress.DataAccess.ConnectionParameters.SQLiteConnectionParameters();
             DevExpress.DataAccess.Sql.SelectQuery selectQuery1 = new DevExpress.DataAccess.Sql.SelectQuery();
             DevExpress.DataAccess.Sql.Column column1 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression1 = new DevExpress.DataAccess.Sql.ColumnExpression();
@@ -44,7 +43,6 @@ namespace FontDemoReport {
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression6 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Column column7 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression7 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
             DevExpress.DataAccess.Sql.Column column8 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression8 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Column column9 = new DevExpress.DataAccess.Sql.Column();
@@ -53,6 +51,7 @@ namespace FontDemoReport {
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression10 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Column column11 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression11 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
             DevExpress.DataAccess.Sql.Column column12 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression12 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Column column13 = new DevExpress.DataAccess.Sql.Column();
@@ -63,11 +62,10 @@ namespace FontDemoReport {
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression15 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Column column16 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression16 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.Column column17 = new DevExpress.DataAccess.Sql.Column();
-            DevExpress.DataAccess.Sql.ColumnExpression columnExpression17 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Join join1 = new DevExpress.DataAccess.Sql.Join();
             DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DemoReport));
+            DevExpress.XtraReports.UI.XRWatermark xrWatermark1 = new DevExpress.XtraReports.UI.XRWatermark();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.label5 = new DevExpress.XtraReports.UI.XRLabel();
@@ -108,11 +106,13 @@ namespace FontDemoReport {
             // 
             this.label3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ProductName]")});
+            this.label3.Font = new DevExpress.Drawing.DXFont("Roboto", 9.75F);
             this.label3.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 0F);
             this.label3.Multiline = true;
             this.label3.Name = "label3";
             this.label3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.label3.SizeF = new System.Drawing.SizeF(362.5F, 27.08333F);
+            this.label3.StylePriority.UseFont = false;
             this.label3.Text = "label3";
             // 
             // BottomMargin
@@ -135,7 +135,7 @@ namespace FontDemoReport {
             // 
             this.label4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Description]")});
-            this.label4.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
+            this.label4.Font = new DevExpress.Drawing.DXFont("Roboto", 10F);
             this.label4.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 39.58333F);
             this.label4.Multiline = true;
             this.label4.Name = "label4";
@@ -157,7 +157,7 @@ namespace FontDemoReport {
             // 
             this.label2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([UnitPrice])")});
-            this.label2.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.label2.Font = new DevExpress.Drawing.DXFont("Nerko One", 14F, DevExpress.Drawing.DXFontStyle.Bold);
             this.label2.LocationFloat = new DevExpress.Utils.PointFloat(513.5417F, 0F);
             this.label2.Multiline = true;
             this.label2.Name = "label2";
@@ -184,65 +184,59 @@ namespace FontDemoReport {
             // sqlDataSource1
             // 
             this.sqlDataSource1.ConnectionName = "nwind";
-            sqLiteConnectionParameters1.FileName = "C:\\Temp\\nwind.db";
-            this.sqlDataSource1.ConnectionParameters = sqLiteConnectionParameters1;
             this.sqlDataSource1.Name = "sqlDataSource1";
-            columnExpression1.ColumnName = "CategoryID";
-            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"184\" />";
-            table1.Name = "Categories";
+            columnExpression1.ColumnName = "ProductID";
+            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"283\" />";
+            table1.Name = "Products";
             columnExpression1.Table = table1;
             column1.Expression = columnExpression1;
-            columnExpression2.ColumnName = "CategoryName";
+            columnExpression2.ColumnName = "ProductName";
             columnExpression2.Table = table1;
             column2.Expression = columnExpression2;
-            columnExpression3.ColumnName = "Description";
+            columnExpression3.ColumnName = "SupplierID";
             columnExpression3.Table = table1;
             column3.Expression = columnExpression3;
-            columnExpression4.ColumnName = "Picture";
+            columnExpression4.ColumnName = "QuantityPerUnit";
             columnExpression4.Table = table1;
             column4.Expression = columnExpression4;
-            columnExpression5.ColumnName = "Icon17";
+            columnExpression5.ColumnName = "UnitPrice";
             columnExpression5.Table = table1;
             column5.Expression = columnExpression5;
-            columnExpression6.ColumnName = "Icon25";
+            columnExpression6.ColumnName = "UnitsInStock";
             columnExpression6.Table = table1;
             column6.Expression = columnExpression6;
-            columnExpression7.ColumnName = "ProductID";
-            table2.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"284\" />";
-            table2.Name = "Products";
-            columnExpression7.Table = table2;
+            columnExpression7.ColumnName = "UnitsOnOrder";
+            columnExpression7.Table = table1;
             column7.Expression = columnExpression7;
-            columnExpression8.ColumnName = "ProductName";
-            columnExpression8.Table = table2;
+            columnExpression8.ColumnName = "ReorderLevel";
+            columnExpression8.Table = table1;
             column8.Expression = columnExpression8;
-            columnExpression9.ColumnName = "SupplierID";
-            columnExpression9.Table = table2;
+            columnExpression9.ColumnName = "Discontinued";
+            columnExpression9.Table = table1;
             column9.Expression = columnExpression9;
-            column10.Alias = "Products_CategoryID";
-            columnExpression10.ColumnName = "CategoryID";
-            columnExpression10.Table = table2;
+            columnExpression10.ColumnName = "EAN13";
+            columnExpression10.Table = table1;
             column10.Expression = columnExpression10;
-            columnExpression11.ColumnName = "QuantityPerUnit";
+            columnExpression11.ColumnName = "CategoryName";
+            table2.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"183\" />";
+            table2.Name = "Categories";
             columnExpression11.Table = table2;
             column11.Expression = columnExpression11;
-            columnExpression12.ColumnName = "UnitPrice";
+            columnExpression12.ColumnName = "Description";
             columnExpression12.Table = table2;
             column12.Expression = columnExpression12;
-            columnExpression13.ColumnName = "UnitsInStock";
+            columnExpression13.ColumnName = "Picture";
             columnExpression13.Table = table2;
             column13.Expression = columnExpression13;
-            columnExpression14.ColumnName = "UnitsOnOrder";
+            columnExpression14.ColumnName = "Icon17";
             columnExpression14.Table = table2;
             column14.Expression = columnExpression14;
-            columnExpression15.ColumnName = "ReorderLevel";
+            columnExpression15.ColumnName = "Icon25";
             columnExpression15.Table = table2;
             column15.Expression = columnExpression15;
-            columnExpression16.ColumnName = "Discontinued";
-            columnExpression16.Table = table2;
+            columnExpression16.ColumnName = "CategoryID";
+            columnExpression16.Table = table1;
             column16.Expression = columnExpression16;
-            columnExpression17.ColumnName = "EAN13";
-            columnExpression17.Table = table2;
-            column17.Expression = columnExpression17;
             selectQuery1.Columns.Add(column1);
             selectQuery1.Columns.Add(column2);
             selectQuery1.Columns.Add(column3);
@@ -259,8 +253,7 @@ namespace FontDemoReport {
             selectQuery1.Columns.Add(column14);
             selectQuery1.Columns.Add(column15);
             selectQuery1.Columns.Add(column16);
-            selectQuery1.Columns.Add(column17);
-            selectQuery1.Name = "Categories";
+            selectQuery1.Name = "Products";
             relationColumnInfo1.NestedKeyColumn = "CategoryID";
             relationColumnInfo1.ParentKeyColumn = "CategoryID";
             join1.KeyColumns.Add(relationColumnInfo1);
@@ -282,10 +275,13 @@ namespace FontDemoReport {
             this.GroupHeader1});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
-            this.DataMember = "Categories";
+            this.DataMember = "Products";
             this.DataSource = this.sqlDataSource1;
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
             this.Version = "24.2";
+            xrWatermark1.Id = "Watermark1";
+            this.Watermarks.AddRange(new DevExpress.XtraPrinting.Drawing.Watermark[] {
+            xrWatermark1});
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
