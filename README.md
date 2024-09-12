@@ -17,7 +17,7 @@ You can obtain required font data from any font hosting service. This example il
 
 ## Example Details
 
-The report in this example contains a few fonts that may be missing in many hosting environments: _Ga Maamli_, _Roboto_, and _Nerko One_. The task is to obtain these fonts (if missing) and make them available to report controls. When exported to PDF, the report must reflects the original design ([result.pdf](result.pdf)):
+The report in this example contains a few fonts that may be missing in many hosting environments: _Ga Maamli_, _Roboto_, and _Nerko One_. The example obtains these fonts if missing and make them available to report controls. When exported to PDF, the report uses the original fonts ([result.pdf](result.pdf)):
 
 ![Report PDF file uses typefaces obtained from Google Fonts](report-with-fonts.png)
 
