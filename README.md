@@ -6,10 +6,10 @@
 <!-- default badges end -->
 # Reporting for WinForms - Obtain Missing Fonts from a Font Hosting Service (Google Fonts)
 
-Your report design and layout may rely on a font type that is not available in the application's hosting environment. The font may not be installed on the client machine, in a Docker image, in an Azure Virtual Desktop, or in another host/container. In such cases, your report substitutes unavailable fonts with default options. Report pages appear different from their original design.  
+Your report design and layout may rely on a font type that is not available in the application's hosting environment. The font may not be installed on the client machine, in a Docker image, in an Azure Virtual Desktop, or in another host/container. In such instances, your report will substitute unavailable fonts with default options. Once a font is substituted, a report may not appear as expected/designed.
 
-DevExpress Reports suite helps you ensure that a report uses correct fonts regardless of the hosting environment. A report notifies you about missing typefaces so you can obtain required font data. Once you obtain the fonts, add them to your report's [DXFontRepository](https://docs.devexpress.com/CoreLibraries/404255/devexpress-drawing-library/use-font-repository-to-add-custom-fonts?v=24.2) and thus make them available to report controls. 
-
+DevExpress Reports suite helps you ensure that a report uses correct fonts regardless of the hosting environment. A report notifies you about missing typefaces so you can obtain required font data. Once you obtain the fonts, add them to your report's [DXFontRepository](https://docs.devexpress.com/CoreLibraries/404255/devexpress-drawing-library/use-font-repository-to-add-custom-fonts?v=24.2) and thus make the fonts available to individual report elements/controls. 
+ 
 You can obtain required font data from any font hosting service. This example illustrates a service that downloads missing fonts from [Google Fonts](https://fonts.google.com). 
 
 > [!Note]
